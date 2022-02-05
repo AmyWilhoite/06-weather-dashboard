@@ -5,4 +5,6 @@ This is a weather dashboard that connects with an API  to return data for certai
 # Preview
 
 # Links
+Link:  https://amywilhoite.github.io/06-weather-dashboard/ <br>
+Repository: https://github.com/AmyWilhoite/06-weather-dashboard.git 
 
