@@ -18,17 +18,19 @@
       </div>
       <!-- search bar -->
         <div class="container-fluid">
-        <div class="navbar navbar-light bg-light">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="navbar navbar-light bg-light px-md-5">
+            <div class="form-inline">
+              <input id = "userData" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" onclick="search()">Search</button>
+            </div>
         </div>
         <!-- container with sections -->
+    <div class="jumbotron jumbotron-fluid">
     <div>
-        <div class="row">
+        <div class="row container-fluid px-md-5">
           <div class="col-3">
             <ul class="list-group">
-                <li class="list-group-item px-lg-5">An item</li>
+                <li class="list-group-item">An item</li>
                 <li class="list-group-item">A second item</li>
                 <li class="list-group-item">A third item</li>
                 <li class="list-group-item">A fourth item</li>
@@ -38,28 +40,29 @@
           <div class="col-sm">
             <div class="jumbotron-fluid">
                 <div class="container-fluid bg-light border px-lg-5">
-                  <h2 class="display-8">City Weather</h2>
-                  <p class="lead">Temp:</p>
-                  <p class="lead">Wind:</p>
-                  <p class="lead">Humidity:</p>
-                  <p class="lead">UV Index:</p>
+                  <h2 class="display-8">City <span id = "cityName"></span></h2>
+                  <p class="lead">Temp: <span id = "cityTemp"></span></p>
+                  <p class="lead">Wind: <span id = "cityWind"></span></p>
+                  <p class="lead">Humidity: <span id = "cityHumidity"></span></p>
+                  <p class="lead">UV Index:<span id = "cityUV" ></span></span></p>
                 </div>
               </div>
-        <div class= "col row px-lg-5">
-          <div class="col border ">
-            1 of 5 cities
+        <div class= "col row container-fluid p-4">
+          <div class="col border bg-light">
+            Day 1 Forecast
+            <img src id = "0"/>
           </div>
-          <div class="col border">
-            2 of 5 cities
+          <div class="col border bg-light">
+            Day 2 Forecast
           </div>
-          <div class="col border">
-            3 of 5 cities
+          <div class="col border bg-light">
+            Day 3 Forecast
           </div>
-          <div class="col border">
-            4 of 5 cities
+          <div class="col border bg-light">
+            Day 4 Forecast
           </div>
-          <div class="col border">
-            5 of 5 cities
+          <div class="col border bg-light">
+            Day 5 Forecast
           </div>
         </div>
         </div>
