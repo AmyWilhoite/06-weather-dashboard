@@ -23,19 +23,24 @@ function get5DayForecast(lat, long) {
       .then(function (response) {
           // response.list[0].weather.description
           // var imageID = "http://openweathermap.org/img/wn/"+ response.list[i].weather[0].icon + "@2x.png";
-
+          // loop for 5 day forecast
           for (let i = 0; i < 5; i++) {
-         // icon is working across loop
-         // http://openweathermap.org/img/wn/10d@2x.png 
+       
+        // http://openweathermap.org/img/wn/10d@2x.png 
+        // icon is working across loop
+        // variable to get image
           var imageID = "http://openweathermap.org/img/wn/"+ response.daily[i].weather[0].icon + "@2x.png";
         
           // To Do: var nextDayDate = (date + i);
-          var nextDayTemp = document.getElementById("nextDayTemp");
-          var nextDayWind = document.getElementById("nextDayWind");
-          var nextDayHumidity = document.getElementById("nextDayHumidity");
+          // var nextDayTemp = document.getElementById("nextDayTemp" + i);
+          var nextDayTemp = document.getElementById("nextDayTemp" + i);
+          var nextDayWind = document.getElementById("nextDayWind" + i);
+          var nextDayHumidity = document.getElementById("nextDayHumidity" + i);
+          // UV works 
           var cityUV = document.getElementById("cityUV");
 
           document.getElementById(i).src=imageID;
+  
           nextDayTemp.textContent = response.daily[i].temp.day;
           nextDayWind.textContent = response.daily[i].wind_speed;
           nextDayHumidity.textContent = response.daily[i].humidity;
@@ -111,11 +116,11 @@ function search () {
 
 // function
 
-var cityList = localStorage.getItem("city");
-var listItems = document.querySelectorAll(".list-group-item");
+// var cityList = localStorage.getItem("city");
+// var listItems = document.querySelectorAll(".list-group-item");
 
 
-localStorage.setItem("city", JSON.stringify(city));
+// localStorage.setItem("city", JSON.stringify(city));
 
 
 
@@ -127,6 +132,7 @@ localStorage.setItem("city", JSON.stringify(city));
 //     console.log(city);
   
 //     localStorage.setItem(userData.value(), JSON.stringify(userData.value()));
+//      localStorage.getItem()
 // }
 // //local storage linked
 // $("#userData").click(function(){
