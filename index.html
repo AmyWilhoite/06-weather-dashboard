@@ -13,7 +13,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Get The Weather</h1>
-          <p class="lead">Search for your city</p>
+          <p class="lead">Search for your city in the United States</p>
         </div>
       </div>
       <!-- search bar -->
@@ -29,6 +29,7 @@
     <div>
         <div class="row container-fluid px-md-5">
           <div class="col-3">
+            <h4 class="display-8">Recent Search:</h4>
             <ul class="list-group">
                 <li class="list-group-item">An item</li>
                 <li class="list-group-item">A second item</li>
@@ -38,31 +39,53 @@
               </ul>
     </div>
           <div class="col-sm">
-            <div class="jumbotron-fluid">
-                <div class="container-fluid bg-light border px-lg-5">
-                  <h2 class="display-8">City <span id = "cityName"></span></h2>
-                  <p class="lead">Temp: <span id = "cityTemp"></span></p>
-                  <p class="lead">Wind: <span id = "cityWind"></span></p>
-                  <p class="lead">Humidity: <span id = "cityHumidity"></span></p>
-                  <p class="lead">UV Index:<span id = "cityUV" ></span></span></p>
+            <div class="col row container-justify px-lg-5">
+              <h2 class="display-8">City:  <span id = "cityName"></span></h2>
+                <div class="container-fluid bg-light border dl-horizontal list-inline">
+                  <li class="lead">Temp: <span id = "cityTemp"></span></li>
+                  <li class="lead">Wind: <span id = "cityWind"></span></li>
+                  <li class="lead">Humidity: <span id = "cityHumidity"></span></li>
+                  <li class="lead">UV Index: <span id = "cityUV" ></span></span></p>
                 </div>
-              </div>
-        <div class= "col row container-fluid p-4">
+            </div>
+          <div class= "col-sm row jumbotron-fluid px-lg-5">
+            <h3>5 Day Forecast</h3>
+          </div>
+        <div class= "col row container-justify px-lg-5 dl-horizontal list-inline">
           <div class="col border bg-light">
-            Day 1 Forecast
+            Day 1 
             <img src id = "0"/>
+            <li>Temp:</li><span id="nextDayTemp"></span>
+            <li>Wind:</li><span id="nextDayWind"></span>
+            <li>Humidity:</li><span id="nextDayHumidity"></span>
+          </div>
+          <div class=" col border bg-light">
+            Day 2 
+            <img src id = "1"/>
+            <li>Temp:</;><span class ="nextDayTemp1"></span>
+            <li>Wind:</li><span class="nextDayWind1"></span>
+            <li>Humidity:</li><span class="nextDayHumidity1"></span>
           </div>
           <div class="col border bg-light">
-            Day 2 Forecast
+            Day 3 
+            <img src id = "2"/>
+            <li>Temp:</li><span id="nextDayTemp2"></span>
+            <li>Wind:</li><span id="nextDayWind3"></span>
+            <li>Humidity:</li><span id="nextDayHumidity2"></span>
           </div>
           <div class="col border bg-light">
-            Day 3 Forecast
+            Day 4 
+            <img src id = "3"/>
+            <li>Temp:</li><span id="nextDayTemp3"></span>
+            <li>Wind:</;><span id="nextDayWind3"></span>
+            <li>Humidity:</li><span id="nextDayHumidity3"></span>
           </div>
           <div class="col border bg-light">
-            Day 4 Forecast
-          </div>
-          <div class="col border bg-light">
-            Day 5 Forecast
+            Day 5 
+            <img src id = "4"/>
+            <li>Temp:</li><span id="nextDayTemp"></span>
+            <li>Wind:</li><span id="nextDayWind"></span>
+            <li>Humidity:</li><span id="nextDayHumidity"></span>
           </div>
         </div>
         </div>
