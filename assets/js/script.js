@@ -51,7 +51,7 @@ function get5DayForecast(lat, long) {
           // }
           // else if ()
 
-          // }
+          }
        
       })
 }
