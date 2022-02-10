@@ -20,8 +20,8 @@
         <div class="container-fluid">
         <div class="navbar navbar-light bg-light px-md-5">
             <div class="form-inline">
-              <input id = "userData" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" onclick="search()">Search</button>
+              <input id = "userData" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+              <button class="btn btn-outline-success my-2 my-sm-0" id="search-city" >Search</button>
             </div>
         </div>
         <!-- container with sections -->
@@ -30,12 +30,12 @@
         <div class="row container-fluid px-md-5">
           <div class="col-3">
             <h4 class="display-8">Recent Search:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
+            <ul class="list-group" id="search-list">
+                <!-- <li class="list-group-item">An item</li>
                 <li class="list-group-item">A second item</li>
                 <li class="list-group-item">A third item</li>
                 <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item">And a fifth one</li> -->
               </ul>
     </div>
           <div class="col-sm">
@@ -48,8 +48,8 @@
                   <li class="lead">UV Index: <span id = "cityUV" ></span></span></p>
                 </div>
             </div>
-          <div class= "col-sm row jumbotron-fluid px-lg-5">
-            <h3>5 Day Forecast</h3>
+          <div class= "row col-sm container-fluid px-lg-5">
+            <h3 class="display-8">5 Day Forecast</h3>
           </div>
         <div class= "col row container-justify px-lg-5 dl-horizontal list-inline">
           <div class="col border bg-light">
