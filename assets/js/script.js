@@ -52,12 +52,26 @@ function get5DayForecast(lat, long) {
 }
 
 
-// get user input from search
 // pass user input to weather API 
+
 function search () {
-    // get value from input
-    var city = document.getElementById("userData").value;
-    console.log(city);
+
+  var city = document.getElementById("userData").value;
+    console.log(city); 
+
+  // // store value
+  // var cityListEl = $('list-group-item')
+  // // store element html
+  // var cityList = [];
+  // // create array from userData inputs (city value)
+  // cityList [0] = city;
+  // // start at 0 array item
+
+  // localStorage.setItem("cityList", JSON.stringify(city));
+  // // for (var i=0; localStorage.length; i++) {
+  // //   cityListEl.append.textContent.localStorage.key(i)
+  // // };
+
 
     // fetch data from the api from current weather based on the city using perameters  api key and imperial units
     var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=f35848bb6c7b565a35f30b45519c3d76&units=imperial';
@@ -90,12 +104,33 @@ function search () {
 
 }
 
+// var storedCity = localStorage.getItem(city);
+// console.log("")
 
 
+// // get user input from search
+// function search () {
+//   // get value from input
+    
 
+  // // get local storage 
+  //   var cityListEl = $('list-group-item');
+  //   var cityList = [];
+  //   if (localStorage.length < 5) {
+  //     for (var i=0; i < localStoraage.length; i++) {
+  //       cityListEl.append ('<li class="list-group-item">' + localStorage.key(i) + localStorage.getItem(localStorage.key(i)) + '</li>')
+        
+  //       // localStorage.setItem("cityList",JSON.stringify(cityList));
+  //   console.log(cityList);
 
-
-
+    // if (cityList.length < 5) {
+    //   for (var i=0; i < userData.length; i++) {
+    //     console.log()
+    //   }
+    // }
+  
+  // TODO: store city in local storage
+// }
 
 // listen()
 
@@ -119,11 +154,7 @@ function search () {
 // var cityList = localStorage.getItem("city");
 // var listItems = document.querySelectorAll(".list-group-item");
 
-
 // localStorage.setItem("city", JSON.stringify(city));
-
-
-
 
 
 
@@ -134,13 +165,14 @@ function search () {
 //     localStorage.setItem(userData.value(), JSON.stringify(userData.value()));
 //      localStorage.getItem()
 // }
-// //local storage linked
+
+
+// //tried to do jQuery to link local storage 
 // $("#userData").click(function(){
 //   console.log("Clicked the save button", $(this));
 // })
 
 // get value
-
 
 
 // function lastSearch () {
@@ -150,3 +182,10 @@ function search () {
 //   console.log(userData.value);
 // }
 
+// function storeDataLocally () {
+//   var city = document.getElementById("userData").value;
+//     console.log(city);
+  
+//     localStorage.setItem(userData.value(), JSON.stringify(userData.value()));
+//      localStorage.getItem()
+// }
