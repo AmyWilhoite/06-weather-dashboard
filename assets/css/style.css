@@ -1,1 +1,15 @@
 /* add padding between list items */
+
+/* jumbocolor */
+
+.low {
+    background-color: yellow;
+}
+
+.medium {
+    background-color: lightsalmon;
+}
+
+.high {
+    background-color: lightcoral;
+}

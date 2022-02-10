@@ -1,13 +1,10 @@
 console.log("this page works!")
+// this homework is still in progress:
+// TODO: return date of event
+// save search results to aside
+// color UV index
 
-// link api using the native request 
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-// exclude: minutely, hourly, alerts
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-// add perameter for imperial fareignheight units=imperial
-// tested the api+my key and was able to return data: https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=f35848bb6c7b565a35f30b45519c3d76&units=imperial
-// need to get data for current, next 5 days 
-// var apiKey = 'f35848bb6c7b565a35f30b45519c3d76'; // my api key from weather app
+
 
 // get 5 day forecast based on lat/long from current weather API
 function get5DayForecast(lat, long) {
@@ -45,8 +42,16 @@ function get5DayForecast(lat, long) {
           nextDayWind.textContent = response.daily[i].wind_speed;
           nextDayHumidity.textContent = response.daily[i].humidity;
           cityUV.textContent = response.current.uvi;
+       
+          
+          // UV value 0-5 color yellow, 6-7 orange, 8-10 red
+          // var jumboColorEl =$("jumboColor");
+          // if(cityUV >= "0" && cityUV >= "3"){
+          //    jumboColorEl.addClass("low"); //color jumbotron yellow
+          // }
+          // else if ()
 
-          }
+          // }
        
       })
 }
@@ -139,7 +144,7 @@ function search () {
 
 // current/future (5day conditions display)
 
-// color for favorability (Favorable, Moderate, Severe)
+// color for conditions being favorability (Favorable, Moderate, Severe)
 
 // view future weather conditions for display city
 
