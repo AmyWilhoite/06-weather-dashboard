@@ -1,27 +1,32 @@
 console.log("this page works!");
 // this homework is still in progress:
-// TODO: return date of event
-// TODO: save search results to aside
-// TODO: color UV index
+// TODO: day 1-5 forecast add dates
+// TODO: UV index color not working
 
-//******************* GLOBAL VARIABLES
+//******************* GLOBAL VARIABLES***********************
 
 var previousSearchedCities = JSON.parse(localStorage.getItem("cityList"));
+var searchBtn = $("#search-city");
+var today = new Date();
+var date = today.getMonth() + 1 + "-" + today.getDate() + "-" + today.getFullYear();
+
+//******************** FUNCTIONS ******************************
+
+// get date
+document.getElementById("displayDate").innerHTML = date;
+
+// store cities in aside
 if (previousSearchedCities === null) {
   //assign a blank array
   previousSearchedCities = [];
 }
 //console.log("Searched ", previousSearchedCities);
 
-var searchBtn = $("#search-city");
-
-// ***************** FUNCTIONS ******************************
-
 // get 5 day forecast based on lat/long from current weather API
 function get5DayForecast(lat, long) {
   console.log("getting 5 day forecast for", lat, long);
+
   // call this api to get the forecast
-  // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
   var domain =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
     lat +
@@ -34,8 +39,6 @@ function get5DayForecast(lat, long) {
       return response.json();
     })
     .then(function (response) {
-      // response.list[0].weather.description
-      // var imageID = "http://openweathermap.org/img/wn/"+ response.list[i].weather[0].icon + "@2x.png";
       // loop for 5 day forecast
       for (let i = 0; i < 5; i++) {
         // http://openweathermap.org/img/wn/10d@2x.png
@@ -46,7 +49,6 @@ function get5DayForecast(lat, long) {
           response.daily[i].weather[0].icon +
           "@2x.png";
 
-        // To Do: var nextDayDate = (date + i);
         // var nextDayTemp = document.getElementById("nextDayTemp" + i);
         var nextDayTemp = document.getElementById("nextDayTemp" + i);
         var nextDayWind = document.getElementById("nextDayWind" + i);
@@ -59,20 +61,22 @@ function get5DayForecast(lat, long) {
         nextDayTemp.textContent = response.daily[i].temp.day;
         nextDayWind.textContent = response.daily[i].wind_speed;
         nextDayHumidity.textContent = response.daily[i].humidity;
-        cityUV.textContent = response.current.uvi;
+        cityUV.textContent = response.daily[0].uvi;
 
-        // UV value 0-5 color yellow, 6-7 orange, 8-10 red
-        // var jumboColorEl =$("jumboColor");
-        // if(cityUV >= "0" && cityUV >= "3"){
-        //    jumboColorEl.addClass("low"); //color jumbotron yellow
-        // }
-        // else if ()
+        // style UV index (Not Working)
+        let cityUvEl = jumboColor;
+        if (cityUV > 0 && cityUV < 2) {
+          cityUvEl.addClass("low");
+        } else if (cityUV > 2 && cityUV < 5) {
+          cityUvEl.addClass("medium");
+        } else if (cityUV > 5) {
+          cityUvEl.addClass("high");
+        }
       }
     });
 }
 
 // pass user input to weather API
-
 function search(city) {
   console.log(city);
 
@@ -109,11 +113,8 @@ function search(city) {
     });
 }
 
+// store value (which is already defined) as an array
 function populateStorage() {
-  // store value (which is already defined) as an array
-  // store element html
-  // create array from userData inputs (city value)
-
   var loopCount = 0;
   if (previousSearchedCities.length > 5) {
     loopCount = 5;
@@ -121,7 +122,8 @@ function populateStorage() {
     loopCount = previousSearchedCities.length;
   }
 
-  // where length of array is less than 5
+  // where length of array is less than 5 cities
+  // TODO (not working)
   for (var i = 0; i < loopCount; i++) {
     console.log("city list value ", previousSearchedCities[i]);
     //creating a li tag
@@ -139,7 +141,7 @@ function populateStorage() {
 //when page loads create by recent search list if values exists
 populateStorage();
 
-//**** EVENT LISTENERS
+//*****************EVENT LISTENERS**********************
 
 searchBtn.on("click", function () {
   var city = document.getElementById("userData").value;

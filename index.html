@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Get The Weather</h1>
-          <p class="lead">Search for your city in the United States</p>
+          <p class="lead">Search for your city to get current weather and forecast</p>
         </div>
       </div>
       <!-- search bar -->
@@ -27,7 +27,7 @@
         <!-- container with sections -->
     <div class="jumbotron jumbotron-fluid">
     <div>
-        <div class="row container-fluid px-md-5">
+        <div class="row container-fluid px-md-5" id="pointer">
           <div class="col-3">
             <h4 class="display-8">Recent Search:</h4>
             <ul class="list-group" id="search-list">
@@ -39,9 +39,10 @@
               </ul>
     </div>
           <div class="col-sm">
-            <div class="row container-fluid px-lg-5 jumboColor">
+            <div class="row container-fluid px-lg-5" id="jumboColor">
               <h2 class="display-8">City:  <span id = "cityName"></span></h2>
                 <div class="container-fluid bg-light border dl-horizontal list-inline">
+                  <h4>Date: <span id="displayDate"> </span></h4>
                   <li class="lead">Temp: <span id = "cityTemp"></span></li>
                   <li class="lead">Wind: <span id = "cityWind"></span></li>
                   <li class="lead">Humidity: <span id = "cityHumidity"></span></li>

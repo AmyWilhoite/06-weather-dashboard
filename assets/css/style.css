@@ -1,6 +1,3 @@
-/* add padding between list items */
-
-/* jumbocolor */
 
 .low {
     background-color: yellow;
@@ -13,3 +10,5 @@
 .high {
     background-color: lightcoral;
 }
+
+li { cursor: pointer; }
